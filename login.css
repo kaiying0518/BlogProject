@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.cal-sans-regular {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    font-family: 'Cal Sans', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('images/pexels-mdsnmdsnmdsn-1831234.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-x;
+    
+   }
+
+.login-form {
+  background-image: url('images/candy.jpg');
+ background-size: cover;
+ background-repeat: no-repeat; 
+  background-size: auto;
+    
+ 
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  color: #333;  
+}
+
+
+.login-form div {
+    margin-bottom: 20px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Cal Sans', sans-serif;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f9a0eb;
+    box-shadow: 0 0 5px rgba(102, 166, 255, 0.5);
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #7ff98f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #d3e2f6;
+     color: #333;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+a {
+    color: #66a6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+small {
+    color: #999;
+}

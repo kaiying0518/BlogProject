@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Cal Sans', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url('images/pexels-mdsnmdsnmdsn-1831234.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-x;
+}
+
+.register-form {
+background-image: url('images/candy.jpg');
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 60px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+   min-height: 500px; 
+}
+
+.register-form h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+
+.register-form div {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: 'Cal Sans', sans-serif;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #f9a0eb;
+  box-shadow: 0 0 5px rgba(102, 166, 255, 0.5);
+}
+
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #7ff98f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #d3e2f6;
+  color: #333;
+  transform: scale(1.03);
+}
+
+
+p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+a {
+  color: #66a6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+small {
+  color: #999;
+}
