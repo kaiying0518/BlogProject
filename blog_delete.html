@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="blog-menu">
+    <ul class="nav-links">
+      <li><a href="#">ブログトップ</a></li>
+      <li><a href="#">ブログ登録</a></li>
+      <li><a href="#">ブログ削除</a></li>
+      <li><a href="#">ログアウト</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" name="search" id="search" placeholder="検索ワードを入力" required>
+      <span class="search-icon"><i class="fas fa-search"></i></span>
+    </div>
+  </nav>
+
+  <div class="text">
+    <h2>ブログ記事の削除</h2>
+  </div>
+
+  <main>
+    <section>
+      <form>
+        <div class="register-section-details_flex">
+          <label for="title">タイトル</label>
+          <input type="text" id="title" name="title" value="削除対象のブログタイトル" readonly>
+        </div>
+
+        <div class="register-section-details_flex">
+          <label for="date">日付</label>
+          <input type="text" id="date" name="date" value="2025年5月14日" readonly>
+        </div>
+
+        <div class="register-section-details_flex">
+          <label for="category">カテゴリー</label>
+          <input type="text" id="category" name="category" value="テクノロジー" readonly>
+        </div>
+
+        <div class="register-section-details_flex">
+          <label for="details">詳細</label>
+          <textarea id="details" name="details" readonly>この記事を本当に削除しますか？</textarea>
+        </div>
+
+        <div class="button-group">
+          <button type="submit" class="btn" style="background-color: #e74c3c;">削除</button>
+          <button type="button" onclick="history.back()" class="btn">戻る</button>
+        </div>
+        <a href="/blog_edit.html">ブログ編集</a>
+      </form>
+    </section>
+  </main>
+  <div class="footer-content">
+    <p>&copy; 2025 Blog. All rights reserved.</p>
+     </div>
+</body>
+</html>

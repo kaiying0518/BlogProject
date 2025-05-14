@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <nav class="blog-menu">
+   
+  <ul class="nav-links">
+    <li><a href="#">ブログトップ</a></li>
+    <li><a href="#">ブログ登録</a></li>
+    <li><a href="#">ブログ削除</a></li>
+    <li><a href="#">ログアウト</a> 
+    
+  </ul>
+   <div class="search-container">
+    <input type="search_text" name="search" id="search_text" placeholder="検索ワードを入力" required>
+    <span class="search-icon"><i class="fas fa-search"></i></span>
+  </div>
+</nav>
+<div class="text">
+<h2>記事編集</h2>
+</div>
+  <main>
+    <section>
+      
+
+      <form>
+        <div class="register-section-details_flex">
+          <label for="title">タイトル</label>
+          <input type="text" id="title" name="title">
+        </div>
+
+        <div class="register-section-details_flex">
+          <label for="date">日付</label>
+          <select name="date" id="date">
+            <option value="">選択してください</option>
+            
+          </select>
+        </div>
+
+        <div class="register-section-details_flex">
+          <label for="category">カテゴリー</label>
+          <input type="text" id="category" name="category">
+        </div>
+
+        <div class="register-section-details_flex">
+          <label for="image">画像</label>
+          <input type="file" id="image" name="image">
+        </div>
+
+        <div class="register-section-details_flex">
+  <label for="details">詳細</label>
+  <textarea id="details" name="details"></textarea>
+</div>
+<div class="button-group">
+  <button type="submit" class="btn">変更</button>
+  <button type="button" onclick="history.back()" class="btn">戻る</button>
+</div>
+ <a href="/blog_delete.html">ブログ削除</a>
+</form>
+</section>
+  </main>
+<div class="footer-content">
+    <p>&copy; 2025 Blog. All rights reserved.</p>
+     </div>
+</body>
+</html>
