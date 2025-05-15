@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import blog.com.Service.AdminService;
 import blog.com.model.entity.Admin;
+import blog.com.service.UsersService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class AdminLoginController {
 	@Autowired
-	private AdminService adminService;
+	private UsersService adminService;
 	@Autowired
 	private HttpSession session;
 

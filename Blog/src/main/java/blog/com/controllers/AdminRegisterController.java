@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import blog.com.Service.AdminService;
+import blog.com.service.UsersService;
 
 
 
 @Controller
 public class AdminRegisterController {
 	@Autowired
-	private AdminService adminService;
+	private UsersService adminService;
 	@GetMapping("/admin/register")
 	public String getAdminRegisterPage() {
 		return "register";
