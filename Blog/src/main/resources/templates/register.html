@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" th:href="@{/css/register.css}" />
+</head>
+<body>
+    
+    <form th:action="@{/admin/register/process}" method="post"class="register-form"> 
+        <h1 class="form-title">Register</h1>
+        <div>
+            <input type="text" name="adminName" id="name" placeholder="Username" required>
+        </div>
+        <div>
+            <input type="text" name="password" id="password" placeholder="Password" required>
+        </div>
+        <div>
+            <input type="email" name="adminEmail" id="email" placeholder="email" required>
+        </div>
+        <button>登録</button>
+         <br>
+        <p>CopyLight<small>&copy;Blog</small></p>
+    </form>
+</body>
+</html>
