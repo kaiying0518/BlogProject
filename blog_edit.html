@@ -1,46 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <link rel="stylesheet" href="blog_edit.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
-     <nav class="blog-menu">
-   
-  <ul class="nav-links">
-    <li><a href="#">ブログトップ</a></li>
-    <li><a href="#">ブログ登録</a></li>
-    <li><a href="#">ブログ削除</a></li>
-    <li><a href="#">ログアウト</a> 
-    
-  </ul>
-   <div class="search-container">
-    <input type="search_text" name="search" id="search_text" placeholder="検索ワードを入力" required>
-    <span class="search-icon"><i class="fas fa-search"></i></span>
+  <nav class="blog-menu">
+
+    <ul class="nav-links">
+      <li><a href="#">ブログトップ</a></li>
+      <li><a href="#">ブログ登録</a></li>
+      <li><a href="#">ログアウト</a>
+
+    </ul>
+    <div class="search-container">
+      <input type="search_text" name="search" id="search_text" placeholder="検索ワードを入力" required>
+      <span class="search-icon"><i class="fas fa-search"></i></span>
+    </div>
+  </nav>
+  <div class="text">
+    <h2>記事編集</h2>
   </div>
-</nav>
-<div class="text">
-<h2>記事編集</h2>
-</div>
   <main>
     <section>
-      
-
-      <form>
+      <form action="#" method="post">
         <div class="register-section-details_flex">
           <label for="title">タイトル</label>
           <input type="text" id="title" name="title">
         </div>
-
-        <div class="register-section-details_flex">
-          <label for="date">日付</label>
-          <select name="date" id="date">
-            <option value="">選択してください</option>
-            
-          </select>
-        </div>
-
         <div class="register-section-details_flex">
           <label for="category">カテゴリー</label>
           <input type="text" id="category" name="category">
@@ -52,19 +44,25 @@
         </div>
 
         <div class="register-section-details_flex">
-  <label for="details">詳細</label>
-  <textarea id="details" name="details"></textarea>
-</div>
-<div class="button-group">
-  <button type="submit" class="btn">変更</button>
-  <button type="button" onclick="history.back()" class="btn">戻る</button>
-</div>
- <a href="/blog_delete.html">ブログ削除</a>
-</form>
-</section>
+          <label for="details">詳細</label>
+          <textarea id="details" name="details"></textarea>
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn">変更</button>
+          <button type="button" onclick="history.back()" class="btn">戻る</button>
+        </div>
+      </form>
+      <form action="" method="post">
+        <div class="">
+          <input type="hidden" name="" value="">
+          <button>削除</button>
+        </div>
+      </form>
+    </section>
   </main>
-<div class="footer-content">
+  <div class="footer-content">
     <p>&copy; 2025 Blog. All rights reserved.</p>
-     </div>
+  </div>
 </body>
+
 </html>
