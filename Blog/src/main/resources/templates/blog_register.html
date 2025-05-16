@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ブログ管理</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="blog_register.css" />
+  <link rel="stylesheet" th:href="@{/css/blog_register.css}" />
 </head>
 
 <body>
@@ -14,9 +14,9 @@
   <nav class="blog-menu">
 
 	<ul class="nav-links">
-	     <li><a href="#">ブログトップ</a></li>
-	     <li><a href="#">ブログ登録</a></li>
-	     <li><a href="#">ログアウト</a></li>
+		<li><a th:href="@{/blog/list}">ブログトップ</a></li>
+					 <li><a th:href="@{/blog/register}">ブログ登録</a></li>
+				     <li><a th:href="@{/users/logout}">ログアウト</a></li>
 
 	   </ul>
     <div class="search-container">
@@ -31,7 +31,7 @@
     <section>
 
 
-      <form action="#" method="post"class="blog_register-form">
+      <form th:action="@{/product/register/process}" enctype="multipart/form-data" method="post"class="blog_register-form">
         <div class="register-section-details_flex">
           <label for="title">タイトル</label>
           <input type="text" id="title" name="title">

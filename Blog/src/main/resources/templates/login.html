@@ -2,31 +2,33 @@
 <html lang="en">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" th:href="@{/css/login.css}" />
 </head>
 <body>
-    <form th:action="@{/admin/login/process}" method="post" class="login-form">
+    <form th:action="@{/users/login/process}" method="post" class="login-form">
         <h1>Welcome</h1>
         <div>
-            <label>
-                <input type="text" name="adminEmail" id="adminEmail" placeholder="UserEmail" required>
-            </label>
+         
+            <input type="email" name="accountEmail" id="accountEmail" placeholder="UserEmail" required />
         </div>
         <div>
-            <label>
-                <input type="text" name="password" id="password" placeholder="Password" required>
-            </label>
+         
+            <input type="password" name="password" id="password" placeholder="Password" required />
         </div>
-		<div th:if="${error}">
-		          <p th:text="${error}" style="color: red;"></p>
-		      </div>
+
+        <!-- 错误提示 -->
+        <div th:if="${error}">
+            <p th:text="${error}" style="color: red;"></p>
+        </div>
+
         <button type="submit">ログイン</button>
-        <p>新規登録は <a href="/admin/register">こちら</a></p>
+
+        <p>新規登録は <a href="/users/register">こちら</a></p>
         <p>CopyLight<small>&copy;Blog</small></p>
     </form>
 </body>

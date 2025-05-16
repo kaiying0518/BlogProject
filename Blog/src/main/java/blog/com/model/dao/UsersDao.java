@@ -9,7 +9,7 @@ import blog.com.model.entity.Users;
 public interface UsersDao extends JpaRepository<Users, Long> {
 	Users save(Users users);
 
-	Users findByAdminEmail(String accountEmail);
+	Users findByAccountEmail(String accountEmail);
 
-	Users findByAdminEmailAndPassword(String accountEmail, String password);
+	Users findByAccountEmailAndPassword(String accountEmail, String password);
 }

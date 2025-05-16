@@ -13,21 +13,21 @@ public class UsersService {
 	@Autowired
 	private UsersDao usersDao;
 
-	public boolean createAdmin(String adminEmail, String adminName, String password) {
-		if (adminDao.findByAdminEmail(adminEmail) == null) {
-			adminDao.save(new Users(adminEmail, adminName, password));
+	public boolean createAccount(String accountEmail, String accountName, String password) {
+		if (usersDao.findByAccountEmail(accountEmail) == null) {
+			usersDao.save(new Users(accountEmail, accountName, password));
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	public Admin loginCheck(String adminEmail,String password) {
-		Admin admin=adminDao.findByAdminEmailAndPassword(adminEmail, password);
-		if(admin==null) {
+	public Users loginCheck(String accountEmail,String password) {
+		Users users=usersDao.findByAccountEmailAndPassword(accountEmail, password);
+		if(users==null) {
 			return null;
 		}else {
-			return admin;
+			return users;
 		}
 	}
 	}

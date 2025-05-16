@@ -1,6 +1,6 @@
+
 .blog-menu {
-   
-  display: flex;
+   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 30px;
@@ -8,6 +8,7 @@
   border-radius: 10px;
   max-width: 1800px;
   margin: 0 auto 40px;
+ 
 }
 
 .search-container {
@@ -56,6 +57,9 @@
 
 .nav-links li a:hover {
   color: #f2f6f8;
+}
+.main-content {
+  flex: 1; 
 }
 
 .text p {
