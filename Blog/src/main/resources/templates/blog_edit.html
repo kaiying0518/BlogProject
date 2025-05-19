@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-   <link rel="stylesheet" href="blog_edit.css">
+   <link rel="stylesheet" th:href="@{/css/blog_edit.css}">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -13,13 +13,13 @@
   <nav class="blog-menu">
 
 	<ul class="nav-links">
-	     <li><a href="#">ブログトップ</a></li>
-	     <li><a href="#">ブログ登録</a></li>
-	     <li><a href="#">ログアウト</a></li>
+		<li><a th:href="@{/blog/list}">ブログトップ</a></li>
+					 <li><a th:href="@{/blog/register}">ブログ登録</a></li>
+				     <li><a th:href="@{/users/logout}">ログアウト</a></li>
 
 	   </ul>
     <div class="search-container">
-      <input type="search_text" name="search" id="search_text" placeholder="検索ワードを入力" required>
+      <input type="search" name="search" id="search_text" placeholder="検索ワードを入力" required>
       <span class="search-icon"><i class="fas fa-search"></i></span>
     </div>
   </nav>
@@ -28,33 +28,34 @@
   </div>
   <main>
     <section>
-      <form action="#" method="post">
+      <form th:action="@{/blog/edit/process}" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="blogId" th:value="${blog.blogId}">
         <div class="register-section-details_flex">
           <label for="title">タイトル</label>
-          <input type="text" id="title" name="title">
+          <input type="text" id="title" name="blogTitle" th:value="${blog.blogTitle}">
         </div>
         <div class="register-section-details_flex">
           <label for="category">カテゴリー</label>
-          <input type="text" id="category" name="category">
+          <input type="text" id="category" name="categoryName" th:value="${blog.categoryName}">
         </div>
 
         <div class="register-section-details_flex">
           <label for="image">画像</label>
-          <input type="file" id="image" name="image">
+          <input type="file" id="image" name="blogImage">
         </div>
 
         <div class="register-section-details_flex">
           <label for="details">詳細</label>
-          <textarea id="details" name="details"></textarea>
+          <textarea id="details" name="blogContent" th:text="${blog.blogContent}"></textarea>
         </div>
         <div class="button-group">
           <button type="submit" class="btn">変更</button>
           <button type="button" onclick="history.back()" class="btn">戻る</button>
         </div>
       </form>
-      <form action="" method="post">
+      <form th:action="@{/blog/delete}" method="post">
         <div class="">
-          <input type="hidden" name="" value="">
+          <input type="hidden" name="blogId" th:value="${blog.blogId}">
           <button>削除</button>
         </div>
       </form>

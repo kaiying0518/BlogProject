@@ -32,7 +32,7 @@ public class BlogRegisterController {
 			return "redirect:/users/login";
 		}else {
 			model.addAttribute("accountName",users.getAccountName());
-			return "product_register";
+			return "blog_register";
 		}
 
 	}
@@ -44,12 +44,12 @@ public class BlogRegisterController {
 		}else {
 			String fileName=new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date())+blogImage.getOriginalFilename();
 		try {
-			Files.copy(blogImage.getInputStream(),Path.of("src/main/resources/static/image/"+fileName));
+			Files.copy(blogImage.getInputStream(),Path.of("src/main/resources/static/blog-img/"+fileName));
 		} catch (IOException e) {
 			
 			e.printStackTrace();
 		}
-		if(blogService.createBlog(blogContent,categoryName,fileName,blogTitle,users.getAccountId())) {
+		if(blogService.createBlog(blogTitle, blogContent, fileName, categoryName, users.getAccountId())) {
 			return "redirect:/blog/list";
 			
 		}else {

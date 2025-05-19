@@ -31,24 +31,24 @@
     <section>
 
 
-      <form th:action="@{/product/register/process}" enctype="multipart/form-data" method="post"class="blog_register-form">
+      <form th:action="@{/blog/register/process}" enctype="multipart/form-data" method="post"class="blog_register-form">
         <div class="register-section-details_flex">
           <label for="title">タイトル</label>
-          <input type="text" id="title" name="title">
+          <input type="text" id="title" name="blogTitle">
         </div>
         <div class="register-section-details_flex">
           <label for="category">カテゴリー</label>
-          <input type="text" id="category" name="category">
+          <input type="text" id="category" name="categoryName">
         </div>
 
         <div class="register-section-details_flex">
           <label for="image">画像</label>
-          <input type="file" id="image" name="image">
+          <input type="file" id="image" name="blogImage">
         </div>
 
         <div class="register-section-details_flex">
           <label for="details">詳細</label>
-          <textarea id="details" name="details"></textarea>
+          <textarea id="details" name="blogContent"></textarea>
         </div>
         <div class="button-group">
           <button type="submit" class="btn">登録</button>
