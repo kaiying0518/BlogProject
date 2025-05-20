@@ -21,10 +21,12 @@
 		     <li><a th:href="@{/users/logout}">ログアウト</a></li>
 
     </ul>
-    <div class="search-container">
-      <input type="text" name="search" id="search" placeholder="検索ワードを入力" required>
-      <span class="search-icon"><i class="fas fa-search"></i></span>
-    </div>
+	<form action="/blog/search" method="get" class="search-container">
+	  <input type="text" name="keyword" id="search" placeholder="検索ワードを入力" required>
+	  <button type="submit" class="search-icon">
+	    <i class="fas fa-search"></i>
+	  </button>
+	</form>
   </nav>
   <main class="main-content">
   <div class="background">

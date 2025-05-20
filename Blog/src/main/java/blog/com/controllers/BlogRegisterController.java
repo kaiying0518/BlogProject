@@ -21,40 +21,54 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class BlogRegisterController {
+	// ブログ処理用のサービスをDI（依存性注入）
 	@Autowired
 	private BlogService blogService;
+	// ログイン情報などを取得するために HttpSession をDI
 	@Autowired
 	private HttpSession session;
+    //ブログ登録画面を表示する
 	@GetMapping("/blog/register")
 	public String getBlogRegisterPage(Model model) {
-		Users users=(Users) session.getAttribute("loginUsersInfo");
-		if(users==null) {
+		// セッションからログイン中のユーザーを取得
+		Users users = (Users) session.getAttribute("loginUsersInfo");
+		// 未ログインならログイン画面へリダイレクト
+		if (users == null) {
 			return "redirect:/users/login";
-		}else {
-			model.addAttribute("accountName",users.getAccountName());
+		} else {
+			// ユーザー名を画面に渡す
+			model.addAttribute("accountName", users.getAccountName());
 			return "blog_register";
 		}
 
 	}
+
 	@PostMapping("/blog/register/process")
-	public String blogRegisterProcess(@RequestParam String blogTitle,@RequestParam String blogContent,@RequestParam MultipartFile blogImage,@RequestParam String categoryName) {
-		Users users=(Users) session.getAttribute("loginUsersInfo");
-		if(users==null) {
+	public String blogRegisterProcess(@RequestParam String blogTitle, @RequestParam String blogContent,
+			@RequestParam MultipartFile blogImage, @RequestParam String categoryName) {
+		 // セッションからログインユーザーを取得
+		Users users = (Users) session.getAttribute("loginUsersInfo");
+		 // 未ログインならログイン画面へ
+		if (users == null) {
 			return "redirect:/users/login";
-		}else {
-			String fileName=new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date())+blogImage.getOriginalFilename();
-		try {
-			Files.copy(blogImage.getInputStream(),Path.of("src/main/resources/static/blog-img/"+fileName));
-		} catch (IOException e) {
-			
-			e.printStackTrace();
+		} else {
+			// 画像ファイル名をタイムスタンプ付きで生成
+			String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date())
+					+ blogImage.getOriginalFilename();
+			try {
+				// アップロードされた画像を保存する
+				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/blog-img/" + fileName));
+			} catch (IOException e) {
+
+				e.printStackTrace();
+			}
+			// ブログをDBに登録
+			if (blogService.createBlog(blogTitle, blogContent, fileName, categoryName, users.getAccountId())) {
+				return "redirect:/blog/list";
+
+			} else {
+				return "blog_register";
+			}
 		}
-		if(blogService.createBlog(blogTitle, blogContent, fileName, categoryName, users.getAccountId())) {
-			return "redirect:/blog/list";
-			
-		}else {
-			return "blog_register";
-		}
-	}
 	}
 }
