@@ -13,6 +13,18 @@ public class BlogService {
 	 // BlogDao を Spring が自動的にインジェクト（依存性注入）する
 	@Autowired
 	private BlogDao blogDao;
+	
+	public void save(Blog blog) {
+	    blogDao.save(blog);
+	}
+    public Blog incrementViewCount(Long blogId) {
+        Blog blog = blogDao.findByBlogId(blogId);
+        if (blog != null) {
+            blog.setViewCount(blog.getViewCount() + 1); 
+            blogDao.save(blog); 
+        }
+        return blog;
+    }
 	// 指定されたアカウントIDに基づいて、全ブログ記事を取得する
 	public List<Blog> selectAllBlogList(Long accountId) {
 		if (accountId == null) {

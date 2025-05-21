@@ -1,5 +1,6 @@
 package blog.com.model.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +16,8 @@ public class Blog {
 	private String blogImage;
 	private String categoryName;
 	private Long accountId;
+	@Column(nullable = false)
+	private int viewCount;
 	public Blog() {
 	}
 	public Blog(String blogTitle, String blogContent, String blogImage, String categoryName, Long accountId) {
@@ -23,6 +26,9 @@ public class Blog {
 		this.blogImage = blogImage;
 		this.categoryName = categoryName;
 		this.accountId = accountId;
+		
+		this.viewCount = 0; 
+		
 	}
 	public Long getBlogId() {
 		return blogId;
@@ -60,5 +66,17 @@ public class Blog {
 	public void setAccountId(Long accountId) {
 		this.accountId = accountId;
 	}
+	 public int getViewCount() {
+	        return viewCount; 
+	    }
+
+	    public void setViewCount(int viewCount) {
+	        this.viewCount = viewCount; 
+	    }
+
+	    // 增加阅读次数
+	    public void incrementViewCount() {
+	        this.viewCount++; 
+	    }
 	
 }

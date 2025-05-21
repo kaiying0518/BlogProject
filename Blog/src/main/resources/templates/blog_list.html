@@ -19,6 +19,7 @@
 		<li><a th:href="@{/blog/list}">ブログトップ</a></li>
 			 <li><a th:href="@{/blog/register}">ブログ登録</a></li>
 		     <li><a th:href="@{/users/logout}">ログアウト</a></li>
+			 <li><a th:href="@{/profile}">自己紹介</a></li>
 
     </ul>
 	<form action="/blog/search" method="get" class="search-container">
@@ -29,19 +30,24 @@
 	</form>
   </nav>
   <main class="main-content">
-  <div class="background">
-    <div class="text">
-      <p th:text="${accountName} + ' さんのブログ一覧'">Blog List</p>
-    </div>
-    <div th:each="blog:${blogList}" class="post">
-		<a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}">
-			<img th:src="@{/blog-img/{imagePath}(imagePath=${blog.blogImage})}" alt="">	
-			<p th:text="${blog.blogTitle}"></p><br>
-			<p th:text="${blog.categoryName}"></p>
-				</a>
+    <div class="background">
+      <div class="text">
+        <p th:text="|${accountName} さんのブログ一覧|">Blog List</p>
+      </div>
+
+      <div th:each="blog:${blogList}" class="post">
+      <a th:href="@{/blog/view/{blogId}(blogId=${blog.blogId})}" class="post-link">
+          <img th:src="@{/blog-img/{imagePath}(imagePath=${blog.blogImage})}" th:alt="${blog.blogTitle}">
+          <div class="post-content">
+            <p class="post-title" th:text="${blog.blogTitle}">タイトル</p>
+            <p class="post-category" th:text="${blog.categoryName}">カテゴリー</p>
+			<p class="post-content" th:text="${blog.blogContent}">詳細</p>
+			<p class="post-views">閲覧数: <span th:text="${blog.viewCount}">0</span></p>
+          </div>
+        </a>
       </div>
     </div>
-	</main>
+  </main>
   <footer class="footer-content">
   <p>&copy; 2025 Blog. All rights reserved.</p>
 </footer>

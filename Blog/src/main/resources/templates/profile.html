@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" th:href="@{/css/profile.css}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <nav class="blog-menu">
+
+	<ul class="nav-links">
+		<li><a th:href="@{/blog/list}">ブログトップ</a></li>
+					 <li><a th:href="@{/blog/register}">ブログ登録</a></li>
+				     <li><a th:href="@{/users/logout}">ログアウト</a></li>
+					 <li><a th:href="@{/profile}">自己紹介</a></li>
+	   </ul>
+   
+  </nav>
+  <div class="container">
+    <h1>自己紹介</h1>
+	<p>こんにちは！私はヨウです。趣味は映画鑑賞と旅行です。休日はよくゲームを楽しんでいます。</p>
+	<p>どうぞよろしくお願いします！</p>
+  </div>
+
+</body>
+</html>

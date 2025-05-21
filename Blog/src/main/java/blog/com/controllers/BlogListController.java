@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import blog.com.model.entity.Blog;
@@ -23,6 +24,17 @@ public class BlogListController {
 	// ブログに関する処理を行う BlogService をDI
 	@Autowired
 	private BlogService blogService;
+	
+	@GetMapping("/blog/view/{blogId}")
+	public String increaseViewCountAndRedirect(@PathVariable Long blogId) {
+	    Blog blog = blogService.blogEditCheck(blogId);
+	    if (blog != null) {
+	        blog.setViewCount(blog.getViewCount() + 1);
+	        blogService.save(blog); 
+	    }
+	    return "redirect:/blog/edit/" + blogId;
+	}
+	 
     //ブログ一覧ページの表示処理
 	@GetMapping("/blog/list")
 	public String getBlogList(Model model) {
