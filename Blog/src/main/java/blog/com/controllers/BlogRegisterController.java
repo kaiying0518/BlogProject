@@ -57,7 +57,7 @@ public class BlogRegisterController {
 					+ blogImage.getOriginalFilename();
 			try {
 				// アップロードされた画像を保存する
-				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/blog-img/" + fileName));
+				Files.copy(blogImage.getInputStream(), Path.of("./images/" + fileName));
 			} catch (IOException e) {
 
 				e.printStackTrace();

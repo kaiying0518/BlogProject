@@ -74,7 +74,7 @@ public class Blog {
 	        this.viewCount = viewCount; 
 	    }
 
-	    // 增加阅读次数
+	   
 	    public void incrementViewCount() {
 	        this.viewCount++; 
 	    }

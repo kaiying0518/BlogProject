@@ -39,6 +39,9 @@
         <div class="register-section-details_flex">
           <label for="image">画像</label>
           <input type="file" id="image" name="blogImage">
+		  <div th:if="${blog.blogImage != null}">
+		     <img th:src="@{'/images/' + ${blog.blogImage}}" alt="現在の画像" width="200">
+		   </div>
         </div>
 
         <div class="register-section-details_flex">

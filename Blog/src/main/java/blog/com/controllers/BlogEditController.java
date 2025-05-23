@@ -66,9 +66,9 @@ public class BlogEditController {
 					+ blogImage.getOriginalFilename();
 			try {
 				 // アップロードされた画像を指定パスに保存
-				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/blog-img/" + fileName));
+				Files.copy(blogImage.getInputStream(), Path.of("./images/" + fileName));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 			 // ブログ更新処理を実行

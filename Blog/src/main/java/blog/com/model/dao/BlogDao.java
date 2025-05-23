@@ -14,16 +14,22 @@ import jakarta.transaction.Transactional;
 public interface BlogDao extends JpaRepository<Blog, Long> {
 	// ブログ情報を保存・更新する
 	Blog save(Blog blog);
-	 // 全ブログ記事を取得する
+
+	// 全ブログ記事を取得する
 	List<Blog> findAll();
+
 	// ブログタイトルで1件のブログを取得
 	Blog findByBlogTitle(String blogTitle);
-	 // ブログIDで1件のブログを取得
+
+	// ブログIDで1件のブログを取得
 	Blog findByBlogId(Long blogId);
-	 // ブログIDでブログを削除
+
+	// ブログIDでブログを削除
 	void deleteByBlogId(Long blogId);
-	 // タイトルで部分一致検索
-    List<Blog> findByBlogTitleContaining(String keyword);
-    // カテゴリで部分一致検索
-    List<Blog> findByCategoryNameContaining(String keyword);
+
+	// タイトルで部分一致検索
+	List<Blog> findByBlogTitleContaining(String keyword);
+
+	// カテゴリで部分一致検索
+	List<Blog> findByCategoryNameContaining(String keyword);
 }
