@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UsersRegisterControllerTest" project="Blog" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="blog.com.controllers.UsersRegisterControllerTest" time="0.705" displayname="UsersRegisterControllerTest" uniqueid="[engine:junit-jupiter]/[class:blog.com.controllers.UsersRegisterControllerTest]">
+    <testcase name="testRegister_Success_RedirectToLogin_AndServiceCalledOnce" classname="blog.com.controllers.UsersRegisterControllerTest" time="0.306" displayname="testRegister_Success_RedirectToLogin_AndServiceCalledOnce()" uniqueid="[engine:junit-jupiter]/[class:blog.com.controllers.UsersRegisterControllerTest]/[method:testRegister_Success_RedirectToLogin_AndServiceCalledOnce()]"/>
+    <testcase name="testGetRegisterPage_ReturnsRegisterView" classname="blog.com.controllers.UsersRegisterControllerTest" time="0.385" displayname="testGetRegisterPage_ReturnsRegisterView()" uniqueid="[engine:junit-jupiter]/[class:blog.com.controllers.UsersRegisterControllerTest]/[method:testGetRegisterPage_ReturnsRegisterView()]"/>
+    <testcase name="testRegister_Failure_ViewRegister_AndServiceCalledOnce" classname="blog.com.controllers.UsersRegisterControllerTest" time="0.011" displayname="testRegister_Failure_ViewRegister_AndServiceCalledOnce()" uniqueid="[engine:junit-jupiter]/[class:blog.com.controllers.UsersRegisterControllerTest]/[method:testRegister_Failure_ViewRegister_AndServiceCalledOnce()]"/>
+  </testsuite>
+</testrun>

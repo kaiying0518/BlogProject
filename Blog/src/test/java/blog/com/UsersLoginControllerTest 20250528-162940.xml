@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UsersLoginControllerTest" project="Blog" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="blog.com.controllers.UsersLoginControllerTest" time="0.627" displayname="UsersLoginControllerTest" uniqueid="[engine:junit-jupiter]/[class:blog.com.controllers.UsersLoginControllerTest]">
+    <testcase name="testPostLogin_AllWrong_Failure_RedirectToLoginAndNoSessionUser" classname="blog.com.controllers.UsersLoginControllerTest" time="0.591" displayname="testPostLogin_AllWrong_Failure_RedirectToLoginAndNoSessionUser()" uniqueid="[engine:junit-jupiter]/[class:blog.com.controllers.UsersLoginControllerTest]/[method:testPostLogin_AllWrong_Failure_RedirectToLoginAndNoSessionUser()]"/>
+    <testcase name="testUsersLoginProcess_Success" classname="blog.com.controllers.UsersLoginControllerTest" time="0.019" displayname="testUsersLoginProcess_Success()" uniqueid="[engine:junit-jupiter]/[class:blog.com.controllers.UsersLoginControllerTest]/[method:testUsersLoginProcess_Success()]"/>
+    <testcase name="testLoginFailure_InvalidEmail" classname="blog.com.controllers.UsersLoginControllerTest" time="0.009" displayname="testLoginFailure_InvalidEmail()" uniqueid="[engine:junit-jupiter]/[class:blog.com.controllers.UsersLoginControllerTest]/[method:testLoginFailure_InvalidEmail()]"/>
+    <testcase name="testPostLogin_Failure_RedirectToLoginAndNoSessionUser" classname="blog.com.controllers.UsersLoginControllerTest" time="0.007" displayname="testPostLogin_Failure_RedirectToLoginAndNoSessionUser()" uniqueid="[engine:junit-jupiter]/[class:blog.com.controllers.UsersLoginControllerTest]/[method:testPostLogin_Failure_RedirectToLoginAndNoSessionUser()]"/>
+  </testsuite>
+</testrun>
